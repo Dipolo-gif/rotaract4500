@@ -1,0 +1,32 @@
+PASTA DA MARCA
+==============
+
+Aqui entram os arquivos oficiais do logotipo do Rotaract, baixados do
+Brand Center do Rotary (brandcenter.rotary.org, precisa de login do Meu Rotary).
+
+Arquivos esperados, com estes nomes exatos:
+
+  rotaract.svg          versao colorida, usada no cabecalho das paginas
+  rotaract-branco.svg   versao branca, para usar sobre o azul do rodape
+
+Formatos aceitos: .svg (melhor, nao perde qualidade em nenhum tamanho)
+                  .png com fundo transparente, no minimo 600px de largura
+
+ATENCAO
+-------
+A frase "Clube parceiro do Rotary" faz parte do logotipo do Rotaract.
+Ela nao pode ser apagada, separada ou substituida.
+
+Nao estique, nao gire, nao mude a cor e nao coloque contorno no logotipo.
+
+Depois de colocar os arquivos aqui, siga o item 1 do arquivo COMO-EDITAR.md
+para trocar o emblema pelo logotipo oficial nas tres paginas.
+
+O emblema do Rotary ja esta aqui, em rotary.png, na versao de uma cor com a faixa
+ROTARY INTERNATIONAL vazada e fundo transparente. Ele veio do arquivo que voce
+enviou: o original em JPEG esta guardado em rotary-original.jpg e o fundo branco
+foi recortado para o PNG.
+
+O que falta e o LOGOTIPO DO ROTARACT, que junta esse emblema a palavra Rotaract
+e a frase Clube parceiro do Rotary. Essa e a marca correta de um distrito de
+Rotaract e so existe oficialmente no Brand Center.

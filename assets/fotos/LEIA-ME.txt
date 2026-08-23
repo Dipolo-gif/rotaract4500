@@ -1,0 +1,43 @@
+PASTA DAS FOTOS
+===============
+
+Aqui entram os retratos dos participantes e as fotos historicas do distrito.
+
+COMO PREPARAR A FOTO ANTES DE SALVAR AQUI
+-----------------------------------------
+
+Formato    .jpg para retratos e fotos antigas
+           .png so quando precisar de fundo transparente
+
+Tamanho    1200 pixels de largura ja e suficiente
+           deixe o arquivo abaixo de 300 KB
+           foto de celular sem tratamento pesa 5 MB ou mais e deixa o site lento
+
+Nome       sem espaco, sem acento, tudo em letra minuscula
+           certo:  ana-ribeiro.jpg
+           errado: Ana Ribeiro (1).JPG
+
+Corte      as fichas do acervo cortam a imagem no formato 4 por 3
+           deixe o rosto mais ou menos no centro
+
+DIGITALIZAR FOTO DE PAPEL
+-------------------------
+Uma foto de celular resolve. Coloque a foto numa superficie plana, perto de uma
+janela, fotografe de cima e evite a propria sombra. Se tiver scanner, use 300 dpi.
+
+COMO USAR NO SITE
+-----------------
+Depois de salvar o arquivo aqui, escreva o caminho no campo "foto" da historia,
+dentro de dados/historias.js:
+
+  foto: "assets/fotos/ana-ribeiro.jpg",
+
+O caminho precisa ser identico ao nome do arquivo, incluindo maiusculas.
+
+Enquanto uma historia estiver sem foto, a ficha mostra as iniciais da pessoa
+sobre papel quadriculado. Nao fica buraco no layout, entao da para publicar
+antes de conseguir o retrato.
+
+No acervo as fotos aparecem em preto e branco e ganham cor quando o visitante
+passa o mouse. Isso e proposital: da unidade ao conjunto mesmo quando as fotos
+vem de epocas e qualidades muito diferentes.

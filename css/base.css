@@ -1,0 +1,248 @@
+/* =========================================================================
+   SUA HISTORIA FAZ PARTE DA NOSSA - Distrito 4500 de Rotaract
+   base.css - fundamentos: cores oficiais, tipografia, ritmo e textura
+   ========================================================================= */
+
+/* ---- 1. Paleta oficial Rotary / Rotaract ------------------------------
+   Valores retirados do Rotary Brand Center. Nunca alterar nem esmaecer.  */
+:root {
+  /* Liderança */
+  --royal:      #17458f;
+  --azure:      #0067c8;
+  --gold:       #f7a81b;
+
+  /* Apoio */
+  --sky:        #00a2e0;
+  --cranberry:  #d41367;
+  --cardinal:   #e02927;
+  --turquoise:  #00adbb;
+  --orange:     #ff7600;
+  --violet:     #901f93;
+  --grass:      #009739;
+
+  /* Neutros oficiais */
+  --powder:     #b9d9eb;
+  --taupe:      #d9c89e;
+  --cloud:      #d6d1ca;
+  --slate:      #657f99;
+  --charcoal:   #54565a;
+  --pewter:     #898a8d;
+  --silver:     #d0cfcd;
+  --moss:       #a7aca2;
+  --lavender:   #c6bcd0;
+  --stone:      #9ba4b4;
+
+  /* ---- 2. Superficies de papel -----------------------------------------
+     Neutros de suporte do acervo. As cores de marca seguem intactas.     */
+  --papel:      #fbf7ef;
+  --papel-2:    #f4ecdd;
+  --papel-3:    #efe6d3;
+  --ficha:      #fffdf8;
+  --tinta:      #2a1220;
+  --tinta-2:    #5a4552;
+  --fio:        #ddd0b4;
+  --fio-fraco:  #eae0cd;
+
+  /* Tons de texto derivados dos neutros oficiais.
+     Slate e Gold puros ficam abaixo de 4.5:1 sobre papel, o que reprova
+     em texto pequeno. Estes escurecidos são usados apenas em TEXTO; as
+     cores de marca seguem puras em faixas, fios, ícones e fundos. */
+  --slate-texto: #4c6076;   /* Slate escurecido  · 6.06:1 sobre papel */
+  --ouro-texto:  #9a6800;   /* Gold escurecido   · 4.51:1 sobre papel */
+  --numero:      #8d7a4e;   /* numerais grandes  · 3.53:1 sobre papel */
+  --rosa-texto:  #c41160;   /* Cranberry fechado · 4.97:1 sobre papel 2 */
+  --marca-fundo: #a20d4e;   /* Cranberry fechado para hover de link      */
+
+  /* ---- 3. Tipografia ---------------------------------------------------
+     Open Sans e a substituta oficial de web indicada pelo Brand Center.  */
+  --display: "Newsreader", "Sentinel", Georgia, "Times New Roman", serif;
+  --corpo:   "Open Sans", "Frutiger", "Segoe UI", Helvetica, Arial, sans-serif;
+  --mono:    "IBM Plex Mono", ui-monospace, Consolas, "Courier New", monospace;
+
+  --t-xs:   0.75rem;
+  --t-sm:   0.8125rem;
+  --t-base: clamp(1rem, 0.97rem + 0.15vw, 1.075rem);
+  --t-md:   clamp(1.1rem, 1.05rem + 0.26vw, 1.28rem);
+  --t-lg:   clamp(1.35rem, 1.22rem + 0.62vw, 1.75rem);
+  --t-xl:   clamp(1.7rem, 1.42rem + 1.4vw, 2.7rem);
+  --t-2xl:  clamp(2.1rem, 1.5rem + 3vw, 4.1rem);
+  --t-3xl:  clamp(2.7rem, 1.4rem + 6.2vw, 6.6rem);
+
+  /* ---- 4. Ritmo e medidas --------------------------------------------- */
+  --gutter:  clamp(1.25rem, 4vw, 3rem);
+  --largura: 1240px;
+  --coluna:  68ch;
+  --secao:   clamp(4.5rem, 9vw, 8.5rem);
+
+  /* Sombra de impressao: deslocamento solido, sem desfoque */
+  --relevo:      3px 3px 0 var(--fio);
+  --relevo-marca: 4px 4px 0 var(--royal);
+  --relevo-ouro: 4px 4px 0 var(--gold);
+}
+
+/* ---- 5. Reset ---------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6.5rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+body {
+  font-family: var(--corpo);
+  font-size: var(--t-base);
+  line-height: 1.68;
+  color: var(--tinta);
+  background: var(--papel);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img, svg, video { display: block; max-width: 100%; }
+img { height: auto; }
+input, button, textarea, select { font: inherit; color: inherit; }
+button { background: none; border: 0; cursor: pointer; }
+ul, ol { padding: 0; list-style: none; }
+
+:focus-visible { outline: 2px solid var(--azure); outline-offset: 3px; }
+/* Sobre as faixas de marca o azul do foco sumiria, então ele vira branco */
+.manifesto :focus-visible, .rodape :focus-visible { outline-color: #fff; }
+::selection { background: var(--gold); color: var(--tinta); }
+
+/* ---- 6. Grao de papel --------------------------------------------------
+   Ruido fino sobre a pagina inteira. Peso fisico sem custo de rede.      */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: .55;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23g)' opacity='.2'/%3E%3C/svg%3E");
+}
+
+/* ---- 7. Tipografia base ------------------------------------------------ */
+h1, h2, h3, h4 {
+  font-family: var(--display);
+  font-weight: 500;
+  line-height: 1.07;
+  letter-spacing: -.018em;
+  font-variation-settings: "opsz" 36;
+  text-wrap: balance;
+}
+h1 { font-size: var(--t-2xl); }
+h2 { font-size: var(--t-xl); }
+h3 { font-size: var(--t-lg); }
+h4 {
+  font-size: var(--t-md);
+  font-family: var(--corpo);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.35;
+}
+
+p { text-wrap: pretty; }
+p + p { margin-top: 1.1em; }
+
+a { color: var(--cranberry); text-decoration-thickness: 1px; text-underline-offset: .22em; }
+a:hover { color: var(--marca-fundo); }
+
+/* ---- 8. Utilidades ----------------------------------------------------- */
+.env { width: min(100% - var(--gutter) * 2, var(--largura)); margin-inline: auto; }
+.env-estreito { width: min(100% - var(--gutter) * 2, 880px); margin-inline: auto; }
+
+.secao { padding-block: var(--secao); position: relative; }
+.secao--papel2 { background: var(--papel-2); }
+.secao--marca  { background: var(--cranberry); color: #fff; }
+.secao--marca h1, .secao--marca h2, .secao--marca h3 { color: #fff; }
+.secao--marca a { color: #fff; }
+
+.prosa { max-width: var(--coluna); font-size: var(--t-md); line-height: 1.72; }
+.prosa--larga { max-width: 78ch; }
+.prosa--centro { margin-inline: auto; }
+
+.so-leitor {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* Etiqueta de arquivo: o metadado em monoespacado */
+.etiqueta {
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--slate-texto);
+  font-weight: 500;
+}
+.etiqueta--ouro  { color: var(--ouro-texto); }
+.etiqueta--rosa  { color: var(--cranberry); }
+.etiqueta--clara { color: var(--powder); }
+
+/* A palavra Rotaract carrega a cor da própria organização, o Cranberry.
+   Só sobre fundo claro: contra o azul royal ela não teria contraste. */
+.rotaract { color: var(--cranberry); }
+
+/* Numeracao de secao, como num documento catalogado */
+.num-secao {
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+  letter-spacing: .2em;
+  color: var(--slate-texto);
+  display: block;
+  margin-bottom: .9rem;
+}
+.secao--marca .num-secao { color: #fff; }
+
+/* Fio duplo com losango, no lugar do hr comum */
+.fio-duplo {
+  border: 0;
+  height: 6px;
+  border-top: 1px solid var(--fio);
+  border-bottom: 1px solid var(--fio);
+  position: relative;
+  margin-block: 2.5rem;
+}
+.fio-duplo::after {
+  content: "";
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 7px; height: 7px;
+  background: var(--cranberry);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* Marca de agua: a roda em contorno, grande, atras do conteudo */
+.marca-dagua { position: absolute; pointer-events: none; color: var(--fio); opacity: .3; z-index: 0; }
+.secao > .env, .secao > .env-estreito { position: relative; z-index: 1; }
+
+/* Revelacao no scroll, discreta */
+.revela {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1);
+}
+.revela.visivel { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .revela { opacity: 1; transform: none; } }
+
+/* ---- 9. Impressao ------------------------------------------------------ */
+@media print {
+  body::before, .cabecalho, .rodape, .btn, .indice-lateral, .pular { display: none !important; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .secao { padding-block: 1.2rem; page-break-inside: avoid; }
+  a { color: #000; text-decoration: none; }
+  .revela { opacity: 1; transform: none; }
+}
