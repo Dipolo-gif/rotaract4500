@@ -26,8 +26,8 @@ const CONFIG = {
 
   /* --- Redes sociais -----------------------------------------------------
      Deixe uma linha com "" (aspas vazias) para esconder a rede do rodapé.  */
-  instagram: "",
-  instagramRotulo: "",
+  instagram: "https://www.instagram.com/rotaract4500/",
+  instagramRotulo: "@rotaract4500",
   facebook: "",
   youtube: "",
 
