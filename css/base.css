@@ -115,6 +115,10 @@ input, button, textarea, select { font: inherit; color: inherit; }
 button { background: none; border: 0; cursor: pointer; }
 ul, ol { padding: 0; list-style: none; }
 
+/* O atributo hidden precisa vencer o display dos componentes.
+   Sem isto, um .btn escondido por JS continuaria aparecendo. */
+[hidden] { display: none !important; }
+
 :focus-visible { outline: 2px solid var(--azure); outline-offset: 3px; }
 /* Sobre as faixas de marca o azul do foco sumiria, então ele vira branco */
 .manifesto :focus-visible, .rodape :focus-visible { outline-color: #fff; }
