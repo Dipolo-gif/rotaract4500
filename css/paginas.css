@@ -166,6 +166,9 @@
   .abertura__dado { margin-right: 0; padding-right: 1rem; }
   .abertura__dado:nth-child(2n) { border-right: 0; }
   .abertura__dado:nth-child(-n+2) { border-bottom: 1px solid var(--fio); }
+  /* Sobrando um dado sozinho na última linha, ele ocupa a largura toda
+     em vez de deixar meia fileira vazia com um fio solto ao lado. */
+  .abertura__dado:last-child:nth-child(odd) { grid-column: 1 / -1; border-right: 0; }
 }
 @media (max-width: 460px) {
   .ficha-mestra__carimbo { right: -.5rem; bottom: -1.2rem; transform: rotate(-11deg) scale(.8); }

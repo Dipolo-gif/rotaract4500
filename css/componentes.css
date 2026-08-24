@@ -122,13 +122,21 @@
     background: var(--papel);
     border-bottom: 1px solid var(--fio);
     padding: 1rem var(--gutter) 1.75rem;
-    transform: translateY(-120%);
-    transition: transform .35s cubic-bezier(.2,.7,.3,1);
+    /* Sobe a própria altura mais a do cabeçalho. Uma porcentagem sozinha
+       dependeria de o menu ser alto o bastante, e sobrava um naco dele
+       aparecendo por cima da marca. */
+    transform: translateY(calc(-100% - 4.6rem));
+    visibility: hidden;
+    transition: transform .35s cubic-bezier(.2,.7,.3,1), visibility .35s;
     box-shadow: 0 18px 30px -22px rgba(22,35,63,.4);
   }
-  .nav[data-aberto="true"] { transform: none; }
+  /* visibility também tira os links do caminho do teclado enquanto fechado */
+  .nav[data-aberto="true"] { transform: none; visibility: visible; }
   .nav__lista { flex-direction: column; align-items: stretch; gap: 0; }
   .nav__link {
+    /* Empilhado, o link precisa ser bloco: sendo inline, o padding vertical
+       é pintado mas não ocupa espaço, e um item invade o outro. */
+    display: block;
     padding-block: .95rem;
     border-bottom: 1px solid var(--fio-fraco);
     font-size: 1.05rem;
