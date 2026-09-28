@@ -1,5 +1,5 @@
 /* =========================================================================
-   historias.js  ·  O ACERVO
+   historias.js: O ACERVO
    -------------------------------------------------------------------------
    Cada história que você coletar vira um bloco { ... } dentro da lista
    abaixo. O site monta as fichas, os filtros e a contagem sozinho.
@@ -11,11 +11,11 @@
    4. Atualize a página no navegador. Pronto.
 
    REGRAS QUE EVITAM DOR DE CABEÇA
-   · Todo texto fica entre aspas duplas: "assim".
-   · Cada bloco termina com vírgula depois da chave: },
-   · Se o texto tiver aspas duplas por dentro, troque por aspas simples.
-   · Campo que você não tem ainda: deixe as aspas vazias "".
-   · A foto deve estar em assets/fotos/ e o caminho escrito exatamente
+   - Todo texto fica entre aspas duplas: "assim".
+   - Cada bloco termina com vírgula depois da chave: },
+   - Se o texto tiver aspas duplas por dentro, troque por aspas simples.
+   - Campo que você não tem ainda: deixe as aspas vazias "".
+   - A foto deve estar em assets/fotos/ e o caminho escrito exatamente
      igual ao nome do arquivo, inclusive maiúsculas e acentos.
 
    MODELO PARA COPIAR
@@ -43,17 +43,17 @@
    -------------------------------------------------------------------------
 
    CAMPOS EXPLICADOS
-   nome      · como a pessoa quer ser chamada no acervo
-   clube     · clube de origem
-   periodo   · anos de atuação, ex.: "1998-2003"
-   decada    · só os quatro dígitos da década: "1980", "1990", "2000",
+   nome      como a pessoa quer ser chamada no acervo
+   clube     clube de origem
+   periodo   anos de atuação, ex.: "1998-2003"
+   decada    só os quatro dígitos da década: "1980", "1990", "2000",
                "2010" ou "2020". É o que alimenta o filtro por década.
-   cargo     · cargo mais alto ou o que a pessoa quiser destacar. Opcional.
-   foto      · caminho do arquivo. Deixe "" enquanto não tiver.
-   formato   · como o relato foi registrado: "Entrevista", "Vídeo",
+   cargo     cargo mais alto ou o que a pessoa quiser destacar. Opcional.
+   foto      caminho do arquivo. Deixe "" enquanto não tiver.
+   formato   como o relato foi registrado: "Entrevista", "Vídeo",
                "Texto", "Áudio", "Fotografia" ou "Documento".
-   trecho    · a frase de capa da ficha, curta, entre 60 e 140 caracteres.
-   respostas · as perguntas do roteiro. Apague as que não foram respondidas.
+   trecho    a frase de capa da ficha, curta, entre 60 e 140 caracteres.
+   respostas as perguntas do roteiro. Apague as que não foram respondidas.
    ========================================================================= */
 
 const HISTORIAS = [

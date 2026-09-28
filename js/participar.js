@@ -1,5 +1,5 @@
 /* =========================================================================
-   participar.js  ·  monta o depoimento e entrega para e-mail ou WhatsApp
+   participar.js: monta o depoimento e entrega para e-mail ou WhatsApp
    Não existe servidor por trás: o texto é montado no navegador e enviado
    pelo aplicativo que a pessoa já usa.
    ========================================================================= */

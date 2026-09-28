@@ -1,5 +1,5 @@
 /* =========================================================================
-   config.js  ·  PAINEL DE CONTROLE DO SITE
+   config.js: PAINEL DE CONTROLE DO SITE
    -------------------------------------------------------------------------
    Este é o único arquivo que você precisa mexer para trocar contatos, links
    e redes sociais. Altere o texto entre as aspas e salve. Não apague as

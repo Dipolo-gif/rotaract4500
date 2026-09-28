@@ -1,5 +1,5 @@
 /* =========================================================================
-   acervo.js  ·  monta as fichas a partir de dados/historias.js
+   acervo.js: monta as fichas a partir de dados/historias.js
    Usado na prévia da página inicial e na página do acervo.
    ========================================================================= */
 (function () {
@@ -53,13 +53,12 @@
       '<button type="button" class="ficha" data-ficha="' + i + '">' +
         '<span class="ficha__cor" style="background:' + corDe(h) + '"></span>' +
         '<span class="ficha__aba">' +
-          '<span>Ficha ' + num(i) + '</span>' +
           '<span>' + esc(h.periodo || "") + '</span>' +
         '</span>' +
         retrato +
         '<span class="ficha__corpo">' +
           '<span class="ficha__nome">' + esc(h.nome) + '</span>' +
-          '<span class="ficha__clube">' + esc(h.clube || "") + (h.cargo ? " · " + esc(h.cargo) : "") + '</span>' +
+          '<span class="ficha__clube">' + esc(h.clube || "") + (h.cargo ? ", " + esc(h.cargo) : "") + '</span>' +
           (h.trecho ? '<span class="ficha__trecho">&ldquo;' + esc(h.trecho) + '&rdquo;</span>' : "") +
           '<span class="ficha__rodape">' +
             '<span style="width:6px;height:6px;background:' + corDe(h) + ';transform:rotate(45deg);display:inline-block"></span>' +
@@ -72,21 +71,20 @@
   /* ---- Estado vazio ------------------------------------------------------ */
   function vazio(contexto) {
     var titulo = contexto === "home"
-      ? "O acervo começa com você"
-      : "Esta gaveta ainda está vazia";
+      ? "Ainda não há histórias publicadas"
+      : "Ainda não há histórias publicadas";
     var texto = contexto === "home"
-      ? "Nenhuma história foi arquivada até agora. A primeira ficha deste acervo pode ser a sua."
-      : "As entrevistas estão em andamento. Assim que os primeiros relatos forem registrados e autorizados, eles aparecem aqui, um por ficha.";
+      ? "As primeiras entrevistas estão sendo feitas. Se você passou por algum clube do distrito, pode mandar a sua."
+      : "As primeiras entrevistas estão sendo feitas. Os relatos aparecem aqui assim que forem autorizados.";
 
     return '' +
       '<div class="vazio">' +
         '<img class="vazio__roda" src="assets/marca/rotary.png" alt="" width="480" height="480">' +
-        '<p class="vazio__cod">Acervo ' + esc([cfg.distrito, cfg.nomeDistrito].filter(Boolean).join(' ')) + ' · 000 registros</p>' +
         '<h3 class="vazio__titulo">' + titulo + '</h3>' +
         '<p class="vazio__txt">' + texto + '</p>' +
         '<div class="vazio__acoes">' +
           '<a class="btn" href="participar.html#formulario">Contar minha história</a>' +
-          '<a class="btn btn--linha" href="participar.html#roteiro">Ver as perguntas</a>' +
+          
         '</div>' +
       '</div>';
   }
@@ -145,7 +143,7 @@
 
     if (contagem) {
       contagem.textContent = base.length === 0
-        ? "Nenhum registro arquivado"
+        ? ""
         : resultado.length + (resultado.length === 1 ? " história" : " histórias") +
           (resultado.length !== base.length ? " de " + base.length : "");
     }
@@ -154,9 +152,9 @@
 
     if (!resultado.length) {
       lista.innerHTML = '<div class="vazio">' +
-        '<p class="vazio__cod">Busca sem resultado</p>' +
-        '<h3 class="vazio__titulo">Nada encontrado com esses filtros</h3>' +
-        '<p class="vazio__txt">Tente limpar os filtros ou procurar por outro nome, clube ou palavra do depoimento.</p>' +
+        
+        '<h3 class="vazio__titulo">Nenhuma história encontrada</h3>' +
+        '<p class="vazio__txt">Tente outro nome ou limpe os filtros.</p>' +
         '<div class="vazio__acoes"><button type="button" class="btn btn--linha" id="limpar">Limpar filtros</button></div>' +
         "</div>";
       var limpar = $("#limpar");
@@ -196,12 +194,12 @@
     });
 
     function abrir(h, i) {
-      if (codigo) codigo.textContent = "Ficha " + num(i) + " · " + (cfg.distrito || "");
+      if (codigo) codigo.textContent = h.periodo || "";
       corpo.innerHTML = '' +
         (h.foto ? '<div class="janela__foto"><img src="' + esc(h.foto) + '" alt="Retrato de ' + esc(h.nome) + '"></div>' : "") +
         '<h2 class="janela__nome">' + esc(h.nome) + "</h2>" +
         '<p class="janela__clube">' +
-          [h.clube, h.cargo, h.periodo].filter(Boolean).map(esc).join(" · ") +
+          [h.clube, h.cargo, h.periodo].filter(Boolean).map(esc).join(", ") +
         "</p>" +
         (h.trecho ? '<blockquote class="citacao" style="max-width:none;font-size:1.5rem">' + esc(h.trecho) + "</blockquote>" : "") +
         (h.respostas || []).filter(function (r) { return r && r.r; }).map(function (r) {

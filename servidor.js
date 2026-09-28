@@ -1,5 +1,5 @@
 /* =========================================================================
-   servidor.js  ·  servidor local para ver o site antes de publicar
+   servidor.js: servidor local para ver o site antes de publicar
    -------------------------------------------------------------------------
    Não faz parte do site. Serve só para abrir o projeto no seu computador
    com um endereço http, do jeito que ele vai funcionar quando estiver no ar.

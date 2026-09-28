@@ -3,27 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Acervo · Sua História Faz Parte da Nossa</title>
-<meta name="description" content="O acervo histórico do Distrito 4500 de Rotaract. Cada ficha guarda o relato de uma pessoa que passou pelo movimento.">
+<title>Acervo | Sua História Faz Parte da Nossa</title>
+<meta name="description" content="Relatos de quem passou pelos clubes do Distrito 4500 Caloroso de Rotaract.">
 <meta name="theme-color" content="#d41367">
 <link rel="icon" href="assets/grafismos/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Open+Sans:wght@300..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/componentes.css">
-<link rel="stylesheet" href="css/paginas.css">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
 
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
-
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <symbol id="i-seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
-  <symbol id="i-camera-vazia" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-    <rect x="2" y="5" width="20" height="15"/><path d="m2 16 5.5-5 4 3.5 4.5-4.5L22 15"/><circle cx="16.5" cy="9" r="1.6"/>
-  </symbol>
-</svg>
 
 <header class="cabecalho">
   <div class="env cabecalho__int">
@@ -50,25 +41,17 @@
 
 <main id="conteudo">
 
-<section class="acervo-topo">
-  <div class="env acervo-topo__grade">
-    <div>
-      <span class="etiqueta" style="display:block;margin-bottom:1rem">Memorial do Distrito 4500 Caloroso</span>
-      <h1 style="max-width:14ch">O acervo</h1>
-      <p class="prosa" style="margin-top:1.2rem;max-width:56ch">
-        Cada ficha guarda o relato de uma pessoa que passou pelo <span class="rotaract">Rotaract</span>. As histórias entram aqui
-        conforme as entrevistas são realizadas e autorizadas, e ficam para sempre.
-      </p>
-    </div>
-    <div class="carimbo" aria-hidden="true" style="transform:rotate(6deg)">
-      <span class="carimbo__topo">Arquivo</span>
-      <span class="carimbo__meio">4500</span>
-      <span class="carimbo__base">Permanente</span>
-    </div>
+<section class="topo-pagina">
+  <div class="env">
+    <h1>Acervo</h1>
+    <p class="prosa">
+      Relatos de quem passou pelo <span class="rotaract">Rotaract</span> no Distrito 4500. Cada
+      história entra aqui depois de gravada e autorizada pela pessoa.
+    </p>
   </div>
 </section>
 
-<section class="secao" style="padding-top:0">
+<section class="secao" style="padding-top:2rem">
   <div class="env">
 
     <div class="filtros">
@@ -78,92 +61,34 @@
       </div>
       <div class="filtro">
         <label for="f-decada">Década</label>
-        <select id="f-decada"><option value="">Todas as décadas</option></select>
+        <select id="f-decada"><option value="">Todas</option></select>
       </div>
       <div class="filtro">
         <label for="f-clube">Clube</label>
-        <select id="f-clube"><option value="">Todos os clubes</option></select>
+        <select id="f-clube"><option value="">Todos</option></select>
       </div>
       <div class="filtro">
         <label for="f-formato">Formato</label>
-        <select id="f-formato"><option value="">Todos os formatos</option></select>
+        <select id="f-formato"><option value="">Todos</option></select>
       </div>
       <p class="filtros__contagem" id="f-contagem" role="status" aria-live="polite"></p>
     </div>
 
-    <!-- Fichas montadas a partir de dados/historias.js -->
     <div id="acervo-lista"></div>
 
-  </div>
-</section>
-
-<!-- ===================================================================
-     COMO UMA HISTÓRIA CHEGA AO ACERVO
-     =================================================================== -->
-<section class="secao secao--papel2">
-  <div class="env duo">
-    <div class="duo__aside">
-      <span class="num-secao">Como funciona</span>
-      <h2 class="duo__titulo">O caminho de<br>uma história<br>até esta gaveta</h2>
-      <p class="duo__nota">
-        O acervo é permanente. A cada nova gestão, novos associados são entrevistados e novas fichas
-        são acrescentadas.
-      </p>
-    </div>
-
-    <div class="passos">
-      <div class="passo">
-        <span class="passo__n">Passo 01</span>
-        <h3 class="passo__titulo">Convite</h3>
-        <p class="passo__txt">A equipe distrital localiza a pessoa e faz o convite, ou ela mesma se apresenta pelo site.</p>
-      </div>
-      <div class="passo">
-        <span class="passo__n">Passo 02</span>
-        <h3 class="passo__titulo">Relato</h3>
-        <p class="passo__txt">O depoimento é registrado no formato que a pessoa preferir, seguindo o roteiro de oito perguntas.</p>
-      </div>
-      <div class="passo">
-        <span class="passo__n">Passo 03</span>
-        <h3 class="passo__titulo">Autorização</h3>
-        <p class="passo__txt">Nada é publicado sem que a pessoa autorize o uso do nome, da imagem e do conteúdo.</p>
-      </div>
-      <div class="passo">
-        <span class="passo__n">Passo 04</span>
-        <h3 class="passo__titulo">Arquivo</h3>
-        <p class="passo__txt">A ficha entra no acervo, vai para a série nas redes do distrito e passa a integrar o memorial.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="secao" style="padding-top:0">
-  <div class="env">
-    <div class="chamada">
-      <div>
-        <h2 class="chamada__titulo">Falta a sua ficha nesta gaveta</h2>
-        <p class="chamada__txt">
-          Se você foi associado, presidente, representante distrital ou simplesmente esteve por perto
-          em algum momento importante, o seu relato tem lugar aqui.
-        </p>
-      </div>
-      <a class="btn" href="participar.html#formulario">
-        Contar minha história
-        <svg class="btn__seta" width="17" height="17" aria-hidden="true"><use href="#i-seta"></use></svg>
-      </a>
-    </div>
+    <p class="nota-acervo">
+      Passou por algum clube do distrito? <a href="participar.html">Veja como mandar a sua história</a>.
+    </p>
   </div>
 </section>
 
 </main>
 
-<!-- ===================================================================
-     JANELA DE LEITURA DA FICHA
-     =================================================================== -->
-<div class="janela" id="janela" data-aberta="false" role="dialog" aria-modal="true" aria-label="Ficha do acervo">
+<div class="janela" id="janela" data-aberta="false" role="dialog" aria-modal="true" aria-label="Relato">
   <div class="janela__caixa">
     <div class="janela__topo">
-      <span id="janela-codigo">Ficha</span>
-      <button type="button" class="janela__fechar" data-fechar aria-label="Fechar ficha">Fechar &times;</button>
+      <span id="janela-codigo"></span>
+      <button type="button" class="janela__fechar" data-fechar aria-label="Fechar">Fechar &times;</button>
     </div>
     <div class="janela__corpo" id="janela-corpo"></div>
   </div>
@@ -178,7 +103,7 @@
         <a class="btn btn--claro" href="participar.html#formulario">Participar do projeto</a>
       </div>
       <div>
-        <p class="rodape__titulo">Navegar</p>
+        <p class="rodape__titulo">Páginas</p>
         <ul class="rodape__lista">
           <li><a href="index.html">Início</a></li>
           <li><a href="acervo.html">Acervo</a></li>
@@ -186,13 +111,13 @@
         </ul>
       </div>
       <div>
-        <p class="rodape__titulo">Falar com a equipe</p>
+        <p class="rodape__titulo">Contato</p>
         <ul class="rodape__lista" id="rodape-contato"></ul>
       </div>
     </div>
     <div class="rodape__base">
       <span data-config="rodapeCredito"></span>
-      <span>Rotaract · Clube parceiro do Rotary</span>
+      <span>Rotaract, clube parceiro do Rotary</span>
     </div>
   </div>
 </footer>

@@ -57,7 +57,7 @@ rotaract-4500/
 │   ├── fotos/            retratos e fotos históricas       ← e aqui
 │   └── grafismos/        ícone da aba do navegador
 │
-├── css/                  base, componentes e páginas
+├── css/estilo.css        todo o visual do site
 ├── js/                   comportamento do site
 ├── servidor.js           servidor local, só para testar
 └── COMO-EDITAR.md        guia completo de manutenção
@@ -76,16 +76,14 @@ preparar fotos e publicar.
 ## Identidade visual
 
 Cores e tipografia seguem o [Rotary Brand Center](https://brandcenter.rotary.org).
-O **Cranberry `#D41367`**, cor oficial do Rotaract, conduz o site inteiro: botões,
-links, faixas, números e a palavra Rotaract. O Royal Blue vira cor de apoio, nas
-sombras dos botões e nas categorias, e o Gold aparece no emblema do Rotary.
+O **Cranberry `#D41367`**, cor oficial do Rotaract, é a cor principal: botões,
+links, faixas e a palavra Rotaract. O Gold aparece no emblema do Rotary.
 As cores da marca são usadas puras, sem alteração de tom ou transparência.
 O tom de papel do fundo é um neutro de apoio, escolhido para dar ao site
 caráter de acervo.
 
 Tipografia: **Open Sans** no texto corrido, que é a substituta oficial da
-Frutiger indicada para web; **Newsreader** nos títulos, no lugar da Sentinel;
-**IBM Plex Mono** nos códigos de ficha e etiquetas.
+Frutiger indicada para web, e **Newsreader** nos títulos, no lugar da Sentinel.
 
 > O emblema oficial do Rotary está em `assets/marca/rotary.png`, na versão de uma
 > cor com a faixa vazada e fundo transparente. O **logotipo do Rotaract**, que junta

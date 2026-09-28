@@ -271,23 +271,16 @@ Se precisar mexer nessas partes, chame alguém que trabalhe com sites.
 Tudo no site usa as cores oficiais do Rotary, tiradas do Brand Center, sem
 alteração de tom ou transparência sobre elas:
 
-**Liderança:** Royal Blue `#17458F` · Azure `#0067C8` · Gold `#F7A81B`
-**Apoio:** Sky Blue `#00A2E0` · Cranberry `#D41367` · Cardinal `#E02927` ·
-Turquoise `#00ADBB` · Orange `#FF7600` · Violet `#901F93` · Grass `#009739`
-**Neutros:** Powder Blue `#B9D9EB` · Taupe `#D9C89E` · Slate `#657F99` ·
-Charcoal `#54565A` · Cloud `#D6D1CA`
+**Liderança:** Royal Blue `#17458F`, Azure `#0067C8`, Gold `#F7A81B`
+**Apoio:** Sky Blue `#00A2E0`, Cranberry `#D41367`, Cardinal `#E02927`,
+Turquoise `#00ADBB`, Orange `#FF7600`, Violet `#901F93`, Grass `#009739`
+**Neutros:** Powder Blue `#B9D9EB`, Taupe `#D9C89E`, Slate `#657F99`,
+Charcoal `#54565A`, Cloud `#D6D1CA`
 
-O **Cranberry `#D41367`** é a cor do Rotaract (PMS 214C) e é ela que conduz o site:
-botões, links, faixas do manifesto e do rodapé, números, filetes, o carimbo e a
-palavra Rotaract. O Royal Blue passou a ser cor de apoio, nas sombras dos botões e
-nas categorias coloridas. O Gold vem do emblema do Rotary.
-
-Duas regras que o site respeita e vale manter:
-
-- Sobre as faixas cor de Cranberry, o texto é **branco puro**. Branco translúcido,
-  dourado e azul claro não alcançam contraste suficiente sobre essa cor.
-- Números e etiquetas bem pequenos usam um Cranberry um pouco mais fechado
-  (`--rosa-texto`), porque o tom puro fica no limite da legibilidade em corpo miúdo.
+O **Cranberry `#D41367`** é a cor do Rotaract (PMS 214C) e é a cor principal do site:
+botões, links, a faixa da citação, o rodapé e a palavra Rotaract. O Gold vem do
+emblema do Rotary. Sobre o fundo Cranberry, use texto branco: dourado e azul claro
+ficam ilegíveis ali.
 
 Para destacar a palavra em algum texto novo, é só envolver assim:
 
@@ -295,19 +288,17 @@ Para destacar a palavra em algum texto novo, é só envolver assim:
 O <span class="rotaract">Rotaract</span> é formado por pessoas.
 ```
 
-Use só sobre fundo claro. Nas faixas do manifesto e do rodapé, que já são da cor
-do Rotaract, a palavra segue em branco como o resto do texto.
+Use só sobre fundo claro.
 
 O tom de papel usado como fundo é um neutro de apoio, escolhido para o acervo.
 As cores da marca aparecem sempre puras, como manda o manual.
 
 **Fontes:** Open Sans para o texto corrido, que é a substituta oficial indicada
 pelo Rotary para uso em sites quando a Frutiger não está disponível. Newsreader
-para os títulos, no lugar da Sentinel, que é paga. IBM Plex Mono para os códigos
-de ficha e etiquetas de arquivo.
+para os títulos, no lugar da Sentinel, que é paga.
 
 Se o distrito comprar a licença da Frutiger e da Sentinel, dá para trocar em
-`css/base.css`, nas linhas `--display` e `--corpo`.
+`css/estilo.css`, nas linhas `--serif` e `--sans`.
 
 ---
 
