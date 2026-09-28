@@ -111,6 +111,10 @@
   var fBusca   = $("#f-busca");
   var contagem = $("#f-contagem");
 
+  // sem histórias ainda, os filtros não têm o que filtrar
+  var barraFiltros = $(".filtros");
+  if (!base.length && barraFiltros) barraFiltros.hidden = true;
+
   /* Preenche os seletores só com o que existe no acervo */
   function abastecer(select, valores, rotulo) {
     if (!select) return;
