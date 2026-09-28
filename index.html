@@ -7,8 +7,13 @@
 <meta name="description" content="Projeto do Distrito 4500 Caloroso de Rotaract para reunir as histórias de quem passou pelos nossos clubes.">
 <meta name="theme-color" content="#d41367">
 <meta property="og:title" content="Sua História Faz Parte da Nossa">
-<meta property="og:description" content="Projeto do Distrito 4500 Caloroso de Rotaract para reunir as histórias de quem passou pelos nossos clubes.">
+<meta property="og:description" content="Passou por um clube Rotaract do Distrito 4500? Conte sua história para o acervo do distrito.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://dipolo-gif.github.io/rotaract4500/">
+<meta property="og:image" content="https://dipolo-gif.github.io/rotaract4500/assets/grafismos/compartilhar.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/grafismos/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,15 +59,29 @@
     </p>
     <div class="abertura__acoes">
       <a class="btn btn--grande" href="participar.html#formulario">Contar minha história</a>
-      <a class="link-seta" href="acervo.html">Ver o acervo</a>
+      <a class="link-seta" href="participar.html#roteiro">Ver as perguntas</a>
     </div>
   </div>
 
-  <div class="abertura__painel">
-    <img class="abertura__emblema" src="assets/marca/rotary.png" alt="Emblema do Rotary" width="480" height="480">
-    <blockquote class="abertura__citacao">
-      <p>Cada associado deixa uma marca, cada projeto conta uma história, cada amizade representa um capítulo.</p>
-    </blockquote>
+  <div class="abertura__painel" aria-hidden="true">
+    <img class="abertura__roda" src="assets/marca/rotary.png" alt="" width="480" height="480">
+    <div class="mesa">
+      <div class="cartao cartao--1">
+        <span class="cartao__n">Pergunta 1</span>
+        <p class="cartao__q">Quando você entrou no Rotaract?</p>
+        <span class="cartao__linhas"></span>
+      </div>
+      <div class="cartao cartao--2">
+        <span class="cartao__n">Pergunta 4</span>
+        <p class="cartao__q">Qual pessoa do Rotaract marcou sua trajetória?</p>
+        <span class="cartao__linhas"></span>
+      </div>
+      <div class="cartao cartao--3">
+        <span class="cartao__n">Pergunta 5</span>
+        <p class="cartao__q">O que o Rotaract mudou na sua vida?</p>
+        <span class="cartao__linhas"></span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -81,6 +100,9 @@
         crescendo a cada gestão. Os relatos também vão virar uma série nas redes do distrito,
         mostrando gerações diferentes do movimento.
       </p>
+      <blockquote class="citacao-grande">
+        <p>Cada associado deixa uma marca, cada projeto conta uma história, cada amizade representa um capítulo.</p>
+      </blockquote>
     </div>
   </div>
 </section>
@@ -104,7 +126,36 @@
   </div>
 </section>
 
+<section class="secao">
+  <div class="env">
+    <h2 class="titulo-secao">Uma história que começou antes de nós</h2>
+    <ol class="linha-tempo">
+      <li>
+        <span class="linha-tempo__ano">1905</span>
+        <p>Paul Harris e três amigos fundam o primeiro Rotary Club, em Chicago.</p>
+      </li>
+      <li>
+        <span class="linha-tempo__ano">1968</span>
+        <p>Em 13 de março, o primeiro clube <span class="rotaract">Rotaract</span> recebe sua carta, em Charlotte, nos Estados Unidos.</p>
+      </li>
+      <li>
+        <span class="linha-tempo__ano">2019</span>
+        <p>O Rotary International reconhece os clubes <span class="rotaract">Rotaract</span> como parte do seu quadro de associados.</p>
+      </li>
+      <li>
+        <span class="linha-tempo__ano">2026</span>
+        <p>O Distrito 4500 começa a registrar as histórias de quem passou pelos seus clubes.</p>
+      </li>
+      <li class="linha-tempo__aberta">
+        <span class="linha-tempo__ano">E a sua?</span>
+        <p><a href="participar.html">A próxima linha pode ser escrita por você.</a></p>
+      </li>
+    </ol>
+  </div>
+</section>
+
 <section class="convite">
+  <img class="convite__roda" src="assets/marca/rotary.png" alt="" width="480" height="480">
   <div class="env convite__grade">
     <div>
       <h2>Quem pode participar</h2>
@@ -125,18 +176,33 @@
         <div><dt>Conversa</dt><dd>marcada com a equipe</dd></div>
         <div><dt>Fotos e documentos</dt><dd>atas, certificados, recortes</dd></div>
       </dl>
-      <a class="btn btn--ouro btn--grande" href="participar.html">Ver as perguntas e participar</a>
     </div>
   </div>
 </section>
 
-<section class="secao">
+<section class="secao" id="bloco-acervo" hidden>
   <div class="env">
     <div class="cabeca-secao">
       <h2>Histórias do acervo</h2>
       <a class="link-seta" href="acervo.html">Ver todas</a>
     </div>
     <div id="previa-acervo"></div>
+  </div>
+</section>
+
+<section class="chamada-final">
+  <div class="env chamada-final__grade">
+    <h2 class="chamada-final__titulo">Você esteve lá?</h2>
+    <div>
+      <p class="chamada-final__texto">
+        Não precisa ter sido presidente nem ter uma história longa. Uma lembrança já ajuda a
+        contar a trajetória do distrito.
+      </p>
+      <div class="chamada-final__acoes">
+        <a class="btn btn--grande" href="participar.html#formulario">Contar minha história</a>
+        <a class="btn btn--linha btn--grande" id="cta-whats" href="participar.html" target="_blank" rel="noopener" hidden>Mandar áudio no WhatsApp</a>
+      </div>
+    </div>
   </div>
 </section>
 

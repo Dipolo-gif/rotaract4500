@@ -176,30 +176,45 @@ a:hover { color: var(--rosa-escuro); }
 .abertura__acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem 1.75rem; margin-top: 2.25rem; }
 
 .abertura__painel {
-  position: relative;
-  display: flex; flex-direction: column; justify-content: center; gap: 2.5rem;
-  padding: clamp(2.5rem, 6vw, 5rem);
-  background: var(--cranberry); color: #fff;
-  overflow: hidden;
+  position: relative; overflow: hidden;
+  display: grid; place-items: center;
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+  background: var(--cranberry);
 }
-.abertura__emblema { width: clamp(7rem, 11vw, 10rem); filter: brightness(0) invert(1); }
-.abertura__citacao p {
-  font-family: var(--serif); font-style: italic;
-  font-size: clamp(1.5rem, 1rem + 1.3vw, 2.2rem); line-height: 1.25;
-  max-width: 17ch;
+.abertura__roda {
+  position: absolute; right: -9rem; bottom: -9rem; width: 30rem;
+  filter: brightness(0) invert(1); opacity: .12;
 }
-.abertura__citacao::before {
-  content: ""; display: block; width: 3rem; height: 3px;
-  background: #fff; margin-bottom: 1.5rem;
+
+/* fichas do roteiro espalhadas no painel, como cartões numa mesa */
+.mesa { position: relative; width: min(100%, 26rem); height: 30rem; }
+.cartao {
+  position: absolute; width: 78%;
+  padding: 1.1rem 1.3rem 1.3rem;
+  border-radius: 3px;
+  box-shadow: 0 22px 40px -18px rgba(42,18,32,.55);
 }
+.cartao__n { display: block; font-size: .78rem; font-weight: 700; margin-bottom: .45rem; }
+.cartao__q { font-family: var(--serif); font-size: 1.35rem; line-height: 1.2; }
+.cartao__linhas {
+  display: block; height: 3.3rem; margin-top: .9rem;
+  background: repeating-linear-gradient(transparent 0 1.05rem, currentColor 1.05rem calc(1.05rem + 1px));
+  opacity: .22;
+}
+.cartao--1 { top: 0; left: 0; background: var(--branco); color: var(--tinta); transform: rotate(-4deg); }
+.cartao--1 .cartao__n { color: var(--cranberry); }
+.cartao--2 { top: 34%; right: 0; background: var(--gold); color: var(--tinta); transform: rotate(3deg); }
+.cartao--3 { bottom: 0; left: 6%; background: var(--papel-2); color: var(--tinta); transform: rotate(-1.5deg); }
+.cartao--3 .cartao__n { color: var(--cranberry); }
 
 @media (max-width: 860px) {
   .abertura { grid-template-columns: 1fr; min-height: 0; }
   .abertura__texto { padding-inline: var(--margem); }
-  .abertura__painel { flex-direction: row; align-items: center; gap: 1.5rem; padding: 2rem var(--margem); }
-  .abertura__emblema { width: 4.5rem; flex: none; }
-  .abertura__citacao p { font-size: 1.2rem; max-width: none; }
-  .abertura__citacao::before { display: none; }
+  .abertura__painel { padding-block: 2.5rem 3rem; }
+  .mesa { height: 24rem; width: min(100%, 22rem); }
+  .cartao { width: 82%; padding: .9rem 1rem 1rem; }
+  .cartao__q { font-size: 1.15rem; }
+  .cartao__linhas { height: 2.2rem; }
 }
 
 
@@ -241,6 +256,46 @@ a:hover { color: var(--rosa-escuro); }
 .convite__formatos dd { color: var(--rosa-claro); font-size: .95rem; }
 .convite .btn { margin-top: 2.25rem; }
 @media (max-width: 800px) { .convite__grade { grid-template-columns: 1fr; } }
+
+
+
+/* citação dentro do texto */
+.citacao-grande { margin-top: 2.5rem; padding-left: 1.5rem; border-left: 3px solid var(--cranberry); }
+.citacao-grande p { font-family: var(--serif); font-style: italic; font-size: clamp(1.35rem, 1.1rem + .9vw, 1.8rem); line-height: 1.3; color: var(--tinta); max-width: 34ch; }
+
+
+/* linha do tempo */
+.linha-tempo { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); }
+.linha-tempo li { position: relative; padding: 2.25rem 1.5rem 0 0; border-top: 2px solid var(--cranberry); color: var(--tinta-2); }
+.linha-tempo li::before {
+  content: ""; position: absolute; top: -8px; left: 0;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--gold); border: 2px solid var(--cranberry);
+}
+.linha-tempo__ano { display: block; font-family: var(--serif); font-size: clamp(2rem, 1.5rem + 1.4vw, 2.8rem); line-height: 1; color: var(--cranberry); margin-bottom: .75rem; }
+.linha-tempo__aberta { border-top-style: dashed !important; }
+.linha-tempo__aberta::before { background: var(--papel) !important; }
+.linha-tempo__aberta .linha-tempo__ano { font-style: italic; }
+.linha-tempo__aberta a { font-weight: 700; }
+@media (max-width: 900px) {
+  .linha-tempo { grid-template-columns: 1fr; border-left: 2px solid var(--cranberry); margin-left: 7px; }
+  .linha-tempo li { border-top: 0; padding: 0 0 2rem 1.75rem; }
+  .linha-tempo li::before { top: .5rem; left: -9px; }
+  .linha-tempo__aberta { border-top: 0 !important; }
+}
+
+
+/* chamada final */
+.chamada-final { background: var(--papel-2); padding-block: clamp(4rem, 8vw, 6.5rem); }
+.chamada-final__grade { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 2rem 5rem; align-items: center; }
+.chamada-final__titulo { font-size: clamp(2.6rem, 1.5rem + 4vw, 5rem); line-height: .95; font-style: italic; color: var(--cranberry); }
+.chamada-final__texto { font-size: 1.2rem; color: var(--tinta-2); max-width: 44ch; }
+.chamada-final__acoes { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.75rem; }
+@media (max-width: 800px) { .chamada-final__grade { grid-template-columns: 1fr; } }
+
+.convite { position: relative; overflow: hidden; }
+.convite .env { position: relative; }
+.convite__roda { position: absolute; left: -8rem; top: -8rem; width: 26rem; filter: brightness(0) invert(1); opacity: .06; }
 
 
 /* cabeçalho de seção com link ou nota ao lado */
@@ -396,3 +451,15 @@ a:hover { color: var(--rosa-escuro); }
 .rodape__lista a:hover { text-decoration: underline; }
 .rodape a:focus-visible { outline-color: #fff; }
 .rodape__base { position: relative; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem; margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,.35); font-size: .85rem; }
+
+/* acervo vazio: fichas em branco de um lado, convite do outro */
+.vazio--mesa { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); padding: 0; overflow: hidden; text-align: left; }
+.vazio__mesa { display: grid; place-items: center; padding: 3rem 2rem; background: var(--cranberry); }
+.vazio__conteudo { align-self: center; padding: clamp(2rem, 5vw, 3.5rem); }
+.vazio--mesa .vazio__titulo { font-size: clamp(1.8rem, 1.3rem + 1.6vw, 2.6rem); line-height: 1.1; margin-bottom: 1rem; }
+.vazio--mesa .vazio__txt { margin-inline: 0; }
+.vazio--mesa .vazio__acoes { justify-content: flex-start; }
+@media (max-width: 800px) {
+  .vazio--mesa { grid-template-columns: 1fr; }
+  .vazio__mesa .mesa { height: 27rem; }
+}

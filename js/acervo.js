@@ -69,36 +69,37 @@
   }
 
   /* ---- Estado vazio ------------------------------------------------------ */
-  function vazio(contexto) {
-    var titulo = contexto === "home"
-      ? "Ainda não há histórias publicadas"
-      : "Ainda não há histórias publicadas";
-    var texto = contexto === "home"
-      ? "As primeiras entrevistas estão sendo feitas. Se você passou por algum clube do distrito, pode mandar a sua."
-      : "As primeiras entrevistas estão sendo feitas. Os relatos aparecem aqui assim que forem autorizados.";
-
+  // acervo sem nenhuma história: fichas do roteiro em branco esperando alguém
+  function vazio() {
+    function cartao(n, q, classe) {
+      return '<div class="cartao ' + classe + '"><span class="cartao__n">Pergunta ' + n + '</span>' +
+        '<p class="cartao__q">' + q + '</p><span class="cartao__linhas"></span></div>';
+    }
     return '' +
-      '<div class="vazio">' +
-        '<img class="vazio__roda" src="assets/marca/rotary.png" alt="" width="480" height="480">' +
-        '<h3 class="vazio__titulo">' + titulo + '</h3>' +
-        '<p class="vazio__txt">' + texto + '</p>' +
-        '<div class="vazio__acoes">' +
-          '<a class="btn" href="participar.html#formulario">Contar minha história</a>' +
-          
+      '<div class="vazio vazio--mesa">' +
+        '<div class="vazio__mesa" aria-hidden="true"><div class="mesa">' +
+          cartao(2, 'O que motivou sua entrada?', 'cartao--1') +
+          cartao(3, 'Qual foi o momento mais marcante para você?', 'cartao--2') +
+          cartao(7, 'Que mensagem você deixaria para um novo associado?', 'cartao--3') +
+        '</div></div>' +
+        '<div class="vazio__conteudo">' +
+          '<h2 class="vazio__titulo">As primeiras histórias estão chegando</h2>' +
+          '<p class="vazio__txt">As entrevistas começaram agora. Cada relato aparece aqui assim que a pessoa autoriza a publicação.</p>' +
+          '<p class="vazio__txt">Se você passou por algum clube do distrito, a sua pode ser uma das primeiras.</p>' +
+          '<div class="vazio__acoes"><a class="btn btn--grande" href="participar.html#formulario">Contar minha história</a></div>' +
         '</div>' +
       '</div>';
   }
 
+
   /* ---- Prévia da página inicial ------------------------------------------ */
   var previa = $("#previa-acervo");
-  if (previa) {
-    if (!base.length) {
-      previa.innerHTML = vazio("home");
-    } else {
-      var quantas = cfg.fichasNaHome || 3;
-      previa.innerHTML = '<div class="acervo-grade">' +
-        base.slice(0, quantas).map(ficha).join("") + "</div>";
-    }
+  var blocoPrevia = $("#bloco-acervo");
+  if (blocoPrevia && base.length) blocoPrevia.hidden = false;
+  if (previa && base.length) {
+    var quantas = cfg.fichasNaHome || 3;
+    previa.innerHTML = '<div class="acervo-grade">' +
+      base.slice(0, quantas).map(ficha).join("") + "</div>";
   }
 
   /* ---- Página do acervo --------------------------------------------------- */
@@ -152,7 +153,7 @@
           (resultado.length !== base.length ? " de " + base.length : "");
     }
 
-    if (!base.length) { lista.innerHTML = vazio("acervo"); return; }
+    if (!base.length) { lista.innerHTML = vazio(); return; }
 
     if (!resultado.length) {
       lista.innerHTML = '<div class="vazio">' +

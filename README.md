@@ -12,7 +12,7 @@ depoimento coletado e é feito para durar entre gestões.
 
 | Página | O que traz |
 |---|---|
-| `index.html` | Abertura, manifesto, o que é o projeto, por que importa, quem pode participar, formatos de registro e a prévia do acervo |
+| `index.html` | Abertura com as fichas do roteiro, sobre o projeto, linha do tempo do movimento, quem pode participar e chamada para o WhatsApp |
 | `acervo.html` | As fichas do acervo, com busca e filtros por década, clube e formato |
 | `participar.html` | Passo a passo, roteiro das oito perguntas, formatos aceitos, formulário de envio e dúvidas |
 

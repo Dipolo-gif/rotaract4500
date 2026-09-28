@@ -49,6 +49,13 @@
     }
   });
 
+  // botão de WhatsApp da chamada final
+  var ctaWhats = document.getElementById("cta-whats");
+  if (ctaWhats && cfg.whatsapp) {
+    ctaWhats.href = "https://wa.me/" + cfg.whatsapp;
+    ctaWhats.hidden = false;
+  }
+
   // contatos do rodapé, só os que estiverem preenchidos
   var contato = document.getElementById("rodape-contato");
   if (contato) {
