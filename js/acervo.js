@@ -78,9 +78,10 @@
     return '' +
       '<div class="vazio vazio--mesa">' +
         '<div class="vazio__mesa" aria-hidden="true"><div class="mesa">' +
-          cartao(2, 'O que motivou sua entrada?', 'cartao--1') +
-          cartao(3, 'Qual foi o momento mais marcante para você?', 'cartao--2') +
+          cartao(5, 'O que o Rotaract mudou na sua vida?', 'cartao--1') +
+          cartao(6, 'Qual foi a maior aprendizagem que você levou do movimento?', 'cartao--2') +
           cartao(7, 'Que mensagem você deixaria para um novo associado?', 'cartao--3') +
+          cartao(8, 'O que significa, para você, fazer parte dessa história?', 'cartao--4') +
         '</div></div>' +
         '<div class="vazio__conteudo">' +
           '<h2 class="vazio__titulo">As primeiras histórias estão chegando</h2>' +

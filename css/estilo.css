@@ -187,9 +187,9 @@ a:hover { color: var(--rosa-escuro); }
 }
 
 /* fichas do roteiro espalhadas no painel, como cartões numa mesa */
-.mesa { position: relative; width: min(100%, 26rem); height: 30rem; }
+.mesa { position: relative; width: min(100%, 27rem); height: 36rem; }
 .cartao {
-  position: absolute; width: 78%;
+  position: absolute; width: 76%;
   padding: 1.1rem 1.3rem 1.3rem;
   border-radius: 3px;
   box-shadow: 0 22px 40px -18px rgba(42,18,32,.55);
@@ -197,24 +197,25 @@ a:hover { color: var(--rosa-escuro); }
 .cartao__n { display: block; font-size: .78rem; font-weight: 700; margin-bottom: .45rem; }
 .cartao__q { font-family: var(--serif); font-size: 1.35rem; line-height: 1.2; }
 .cartao__linhas {
-  display: block; height: 3.3rem; margin-top: .9rem;
+  display: block; height: 2.2rem; margin-top: .7rem;
   background: repeating-linear-gradient(transparent 0 1.05rem, currentColor 1.05rem calc(1.05rem + 1px));
   opacity: .22;
 }
 .cartao--1 { top: 0; left: 0; background: var(--branco); color: var(--tinta); transform: rotate(-4deg); }
-.cartao--1 .cartao__n { color: var(--cranberry); }
-.cartao--2 { top: 34%; right: 0; background: var(--gold); color: var(--tinta); transform: rotate(3deg); }
-.cartao--3 { bottom: 0; left: 6%; background: var(--papel-2); color: var(--tinta); transform: rotate(-1.5deg); }
-.cartao--3 .cartao__n { color: var(--cranberry); }
+.cartao--2 { top: 22%; right: 0; background: var(--gold); color: var(--tinta); transform: rotate(3deg); }
+.cartao--3 { top: 46%; left: 3%; background: var(--papel-2); color: var(--tinta); transform: rotate(-1.5deg); }
+.cartao--4 { bottom: 0; right: 4%; background: var(--royal); color: #fff; transform: rotate(2.5deg); }
+.cartao--1 .cartao__n, .cartao--3 .cartao__n { color: var(--cranberry); }
+.cartao--4 .cartao__n { color: var(--gold); }
 
 @media (max-width: 860px) {
   .abertura { grid-template-columns: 1fr; min-height: 0; }
   .abertura__texto { padding-inline: var(--margem); }
   .abertura__painel { padding-block: 2.5rem 3rem; }
-  .mesa { height: 24rem; width: min(100%, 22rem); }
+  .mesa { height: 33rem; width: min(100%, 22rem); }
   .cartao { width: 82%; padding: .9rem 1rem 1rem; }
   .cartao__q { font-size: 1.15rem; }
-  .cartao__linhas { height: 2.2rem; }
+  .cartao__linhas { height: 1.6rem; }
 }
 
 
@@ -461,5 +462,5 @@ a:hover { color: var(--rosa-escuro); }
 .vazio--mesa .vazio__acoes { justify-content: flex-start; }
 @media (max-width: 800px) {
   .vazio--mesa { grid-template-columns: 1fr; }
-  .vazio__mesa .mesa { height: 27rem; }
+  .vazio__mesa .mesa { height: 34rem; }
 }
